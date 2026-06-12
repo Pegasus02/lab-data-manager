@@ -53,7 +53,7 @@ Based on the user's answers, draft the folder structure and show it as a tree. A
 ```
 <ProjectName>/
 ├── AGENTS.md                        # AI agent operation rules
-├── CLAUDE.md                        # Condensed version for Claude agents
+├── .agent-context.md                # Condensed quick-reference for any AI agent
 ├── README.md                        # Project overview and goals
 ├── DataManagement_Overview.md       # Data system entry point
 ├── Experimental_Data/
@@ -109,7 +109,7 @@ After the user confirms the structure, create every file below. Adapt content to
 |------|-------|
 | `README.md` | Project title, goal, schemes overview, navigation table |
 | `AGENTS.md` | Full AI operation rules — see template below |
-| `CLAUDE.md` | Condensed AGENTS.md for Claude agents |
+| `.agent-context.md` | Condensed AGENTS.md for any AI agent |
 | `DataManagement_Overview.md` | 4 core principles, directory trees, quick-ref table, naming examples |
 | `Experimental_Data/README.md` | Authoritative data structure reference |
 | `Experimental_Data/00_Index/README.md` | Explains the three index CSVs |

@@ -14,7 +14,7 @@ This example shows what a real project looks like after running `INSTRUCTIONS.md
 ```
 三维堆叠GAAFET/
 ├── AGENTS.md
-├── CLAUDE.md
+├── .agent-context.md
 ├── README.md
 ├── 实验数据管理系统总览.md
 ├── Experimental_Data/

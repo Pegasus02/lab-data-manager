@@ -1,6 +1,6 @@
 # lab-data-manager
 
-A structured, AI-friendly data management system for experimental research projects. Works with any LLM agent (Claude, GPT, Gemini, etc.) — the instructions are plain Markdown that any agent can follow.
+A structured, AI-friendly data management system for experimental research projects. Works with any LLM agent (Qoder, Qoderwork, Claude, GPT, Gemini, Cursor, etc.) — the instructions are plain Markdown that any agent can follow.
 
 ## What this does
 
@@ -15,6 +15,27 @@ An AI agent reads `INSTRUCTIONS.md` and guides you through creating a complete r
 
 ## Quick start
 
+### With Qoder / Qoderwork
+
+Install the ready-made skill from `skills/research-project-setup/SKILL.md`:
+
+1. Clone or download this repository.
+2. Place `SKILL.md` into one of:
+   - **Project-level:** `<project-root>/.qoder/skills/research-project-setup/SKILL.md`
+   - **User-level:** `~/.qoder/skills/research-project-setup/SKILL.md`
+3. Restart or reload Qoder.
+4. Say: `"Set up a research project"` — the skill triggers automatically.
+
+### With Claude Code
+
+1. Place `skills/research-project-setup/SKILL.md` into `.claude/skills/research-project-setup.md` in your project.
+2. Say: `"Set up a research project"` — the skill triggers automatically.
+
+### With Claude Cowork
+
+1. Settings → Capabilities → Install skill → select `skills/research-project-setup/SKILL.md`.
+2. Say: `"Set up a research project"`.
+
 ### With any LLM agent
 
 Paste the contents of [`INSTRUCTIONS.md`](./INSTRUCTIONS.md) into your agent's context (or upload the file), then say:
@@ -23,21 +44,12 @@ Paste the contents of [`INSTRUCTIONS.md`](./INSTRUCTIONS.md) into your agent's c
 
 The agent will ask you questions about your project, design the folder structure, confirm it with you, and then create all the files.
 
-### With Claude (Cowork / Claude Code)
-
-Install the ready-made skill from `integrations/claude/SKILL.md`:
-
-1. Download `integrations/claude/SKILL.md`
-2. In **Cowork**: Settings → Capabilities → Install skill → select the file
-   In **Claude Code**: place it in your `.claude/skills/` directory
-3. Say: `"Set up a research project"` — the skill triggers automatically
-
 ## Project structure created
 
 ```
 YourProject/
 ├── AGENTS.md                    # AI operation rules for this project
-├── CLAUDE.md                    # Condensed reference (Claude-specific)
+├── .agent-context.md            # Condensed quick-reference for any AI agent
 ├── README.md                    # Project overview
 ├── DataManagement_Overview.md   # Data system entry point
 ├── Experimental_Data/
@@ -80,6 +92,21 @@ The `templates/` directory contains ready-to-use Markdown and CSV templates that
 ## Examples
 
 See `examples/gaafet_project_structure.md` for a real-world example: a 3D-stacked GAAFET semiconductor research project with two fabrication schemes, multiple characterization methods, and device electrical testing.
+
+## Repository structure
+
+```
+lab-data-manager/
+├── INSTRUCTIONS.md              # Full agent instructions (platform-agnostic)
+├── skills/
+│   └── research-project-setup/
+│       └── SKILL.md             # Installable skill for Qoder / Claude / etc.
+├── templates/                   # Reusable file templates
+├── examples/                    # Real-world project examples
+└── integrations/
+    └── claude/
+        └── SKILL.md             # Legacy redirect → skills/research-project-setup/
+```
 
 ## License
 
