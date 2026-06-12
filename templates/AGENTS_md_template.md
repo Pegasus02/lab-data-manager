@@ -3,23 +3,45 @@
 > **This file gives AI agents operating instructions for this project.**  
 > Read it before any task. It takes precedence over all other documentation.
 
+## ⚠️ Mandatory first step — do this before ANY task
+
+Before writing, moving, or creating any file, you MUST complete this sequence:
+
+1. **Scan the directory tree** — read the full output of `tree` or `ls -R` from the project root to understand what exists.
+2. **Read the mandatory reading list** below (all three files, every time, no exceptions).
+3. **Read the task-specific files** from the routing table below.
+4. **Read the nearest README.md** to the directory you will be working in.
+5. Only after completing steps 1–4, begin the actual task.
+
+If you skip any step, the task output will be incorrect. There is no shortcut.
+
+## Mandatory reading (always, for every task)
+
+Read these three files in order before doing anything:
+
+1. `DataManagement_Overview.md` — system-wide overview and principles
+2. `Experimental_Data/README.md` — authoritative data structure reference
+3. `Experimental_Data/00_Index/README.md` — index file conventions
+
+## Task routing table
+
+After the mandatory reading, read additional files based on the task type:
+
+| Task type | Also read |
+|-----------|-----------|
+| Writing an experiment log | `Experimental_Data/06_Daily_Experiment_Log/README.md` + `ExperimentLog_Template.md` |
+| Adding or organizing data | The `README.md` inside the target scheme directory + `Experiment_Index.csv` |
+| Data processing or analysis | `Analysis/<Batch_ID>/README.md` for the relevant batch + the raw data path listed there |
+| Updating indexes | `Experimental_Data/00_Index/README.md` + the CSV file(s) to be updated |
+| Cross-batch comparison | `Device_Index.csv` (if present) + all relevant batch `README.md` files |
+| Script creation or modification | `Scripts/README.md` + any existing scripts in `Scripts/Data_Analysis/` |
+| Documentation update | The specific document being modified + this file (`AGENTS.md`) |
+
+If you are unsure which category a task falls into, read all files listed above. It is better to over-read than to miss context.
+
 ## Project positioning
 
 <!-- One paragraph: what this project is and what it contains. -->
-
-## Mandatory reading
-
-Before starting any task, read:
-
-1. `DataManagement_Overview.md`
-2. `Experimental_Data/README.md`
-3. `Experimental_Data/00_Index/README.md`
-
-For experiment log tasks, also read:
-- `Experimental_Data/06_Daily_Experiment_Log/README.md`
-- `Experimental_Data/06_Daily_Experiment_Log/ExperimentLog_Template.md`
-
-For existing data batches, also read the README nearest that batch.
 
 ## Directory responsibilities
 
@@ -33,12 +55,14 @@ For existing data batches, also read the README nearest that batch.
 
 ## Work principles
 
-1. Do not delete, overwrite, or rename raw data without explicit user instruction.
-2. Do not copy the same raw data batch to multiple directories as "primary copies".
-3. When adding data, establish a clear batch directory and index entry — do not create empty folders speculatively.
-4. All processed results must trace back to a `Raw_Data/` path; document this in `Analysis/<Batch_ID>/README.md`.
-5. Record failed experiments with root cause — "failed, will retry" is not acceptable.
-6. When actual directories conflict with older documentation, this file and `Experimental_Data/README.md` take precedence.
+1. **Read before write.** Never create, modify, or move a file without first reading the existing content of related files. Check for duplicates, existing batches, and naming conventions already in use.
+2. Do not delete, overwrite, or rename raw data without explicit user instruction.
+3. Do not copy the same raw data batch to multiple directories as "primary copies".
+4. When adding data, establish a clear batch directory and index entry — do not create empty folders speculatively.
+5. All processed results must trace back to a `Raw_Data/` path; document this in `Analysis/<Batch_ID>/README.md`.
+6. Record failed experiments with root cause — "failed, will retry" is not acceptable.
+7. **Keep documentation current.** When you notice that any README, index, or AGENTS.md is out of sync with the actual directory structure, update it as part of the current task. Do not leave stale documentation for the next agent.
+8. When actual directories conflict with older documentation, this file and `Experimental_Data/README.md` take precedence — but after resolving the conflict, update the outdated document to match reality.
 
 ## Raw / Processed / Figures / Analysis rules
 
@@ -53,31 +77,53 @@ For existing data batches, also read the README nearest that batch.
 
 ## How to add a new experiment log
 
-1. Determine the experiment date.
-2. Confirm the monthly directory exists: `06_Daily_Experiment_Log/YYYY-MM/`
-3. Copy the template; name it: `YYYYMMDD_ExperimentShortName_Exp<N>.md`
-4. Fill in all required fields.
-5. Add a row to `00_Index/Experiment_Index.csv`.
-6. If new samples are involved, update `Sample_Index.csv`.
-7. If device-level tracking applies, update `Device_Index.csv`.
+1. **Read** `Experimental_Data/06_Daily_Experiment_Log/README.md` and the template.
+2. **Read** `Experiment_Index.csv` to check the latest Experiment_ID and avoid duplicates.
+3. Determine the experiment date.
+4. Confirm the monthly directory exists: `06_Daily_Experiment_Log/YYYY-MM/`
+5. Copy the template; name it: `YYYYMMDD_ExperimentShortName_Exp<N>.md`
+6. Fill in all required fields.
+7. Add a row to `00_Index/Experiment_Index.csv`.
+8. If new samples are involved, update `Sample_Index.csv`.
+9. If device-level tracking applies, update `Device_Index.csv`.
 
 ## How to add a new data batch
 
-1. Determine the primary directory from the data-type mapping table above.
-2. Choose a Batch ID: `YYYYMMDD_Process_LayerOrPurpose`
-3. Create `Raw_Data/<Batch_ID>/` and place instrument exports there.
-4. Create `Processed_Data/<Batch_ID>/`, `Figures/<Batch_ID>/`, `Analysis/<Batch_ID>/` as needed.
-5. Add a row to `Experiment_Index.csv`.
+1. **Read** the `README.md` in the target scheme directory to see existing batches.
+2. **Read** `Experiment_Index.csv` to check for existing Batch_IDs.
+3. Determine the primary directory from the data-type mapping table above.
+4. Choose a Batch ID: `YYYYMMDD_Process_LayerOrPurpose`
+5. Create `Raw_Data/<Batch_ID>/` and place instrument exports there.
+6. Create `Processed_Data/<Batch_ID>/`, `Figures/<Batch_ID>/`, `Analysis/<Batch_ID>/` as needed.
+7. Add a row to `Experiment_Index.csv`.
 
 ## How to record data processing
 
-1. Locate the primary data directory and raw data path.
-2. Do not modify any file in `Raw_Data/`.
-3. Write processed data to `Processed_Data/<Batch_ID>/`.
-4. Write figures to `Figures/<Batch_ID>/`.
-5. Write scripts and parameter tables to `Analysis/<Batch_ID>/`.
-6. Write `Analysis/<Batch_ID>/README.md`: processing date, method, input paths, output paths, key parameters, excluded data, conclusions, open questions.
-7. Update `Experiment_Index.csv` or `Device_Index.csv` with result summaries.
+1. **Read** `Analysis/<Batch_ID>/README.md` (if it exists) to understand prior processing.
+2. Locate the primary data directory and raw data path.
+3. Do not modify any file in `Raw_Data/`.
+4. Write processed data to `Processed_Data/<Batch_ID>/`.
+5. Write figures to `Figures/<Batch_ID>/`.
+6. Write scripts and parameter tables to `Analysis/<Batch_ID>/`.
+7. Write or update `Analysis/<Batch_ID>/README.md`: processing date, method, input paths, output paths, key parameters, excluded data, conclusions, open questions.
+8. Update `Experiment_Index.csv` or `Device_Index.csv` with result summaries.
+
+## How to update documentation
+
+When you discover that documentation is out of date:
+
+1. **Identify the discrepancy** — what does the document say vs. what actually exists.
+2. **Update the document** to match the current state of the project.
+3. **If the conflict involves AGENTS.md or Experimental_Data/README.md**, those files are authoritative — update the other document to match them.
+4. **If AGENTS.md itself is outdated** (e.g., a new directory category was added but not listed in the data-type mapping), update AGENTS.md with the user's confirmation.
+5. After updating, briefly note what changed and why (in the conversation, not in the file).
+
+Documents that should be kept current:
+- `AGENTS.md` — this file (data-type mapping, directory list)
+- `Experimental_Data/README.md` — directory tree, batch table
+- `DataManagement_Overview.md` — top-level tree, registered batches
+- `00_Index/*.csv` — experiment/sample/device indexes
+- Each scheme's `README.md` — active batch table
 
 ## Index field conventions
 
@@ -123,12 +169,14 @@ Write facts first, then judgments.
 - Copy raw data to multiple primary directories
 - Create large numbers of empty directories "for completeness"
 - Edit files in `Docs/` to make them appear to be current rules
+- **Create or modify files without first reading related existing files**
 
 ## Pre-task checklist
 
 Before completing any task, verify:
 
-- [ ] Read `AGENTS.md` and relevant `README.md` files
+- [ ] Completed the mandatory first step (scanned tree + read required files)
+- [ ] Read task-specific files from the routing table
 - [ ] No raw data was modified
 - [ ] New experiments have a log entry
 - [ ] New batches have an index entry
@@ -136,3 +184,4 @@ Before completing any task, verify:
 - [ ] Figures in `Figures/`, scripts in `Analysis/`
 - [ ] Relative paths used throughout
 - [ ] Failures and anomalies documented, not omitted
+- [ ] Documentation updated if any discrepancies were found
