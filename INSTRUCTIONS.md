@@ -126,7 +126,7 @@ After the user confirms the structure, create every file below. Adapt content to
 
 ## AGENTS.md template
 
-Use `templates/AGENTS_md_template.md` as the structural skeleton. Fill in project-specific details throughout. The template enforces a strict read-before-write protocol for all AI agents.
+Use `templates/AGENTS_md_template.md` as the structural skeleton. The template is bilingual (English + Chinese) — fill in project-specific details in both languages. The template enforces a strict read-before-write protocol for all AI agents.
 
 Key sections to populate:
 

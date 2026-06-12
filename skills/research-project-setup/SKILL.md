@@ -160,9 +160,9 @@ Include:
 
 ### AGENTS.md
 
-This is the single most important file — it tells any AI agent how to operate this project safely and consistently. Write it in the user's preferred language.
+This is the single most important file — it tells any AI agent how to operate this project safely and consistently.
 
-**Use `templates/AGENTS_md_template.md` as the structural skeleton.** Fill in all `<!-- -->` placeholders with project-specific content. The template already contains the correct section structure; your job is to populate it.
+**Use `templates/AGENTS_md_template.md` as the structural skeleton.** The template is written in bilingual format (English + Chinese). Fill in all `<!-- -->` placeholders with project-specific content in both languages. The generated `AGENTS.md` should maintain this bilingual structure so that both English-speaking and Chinese-speaking researchers (and their AI agents) can understand the rules.
 
 Required sections (in order):
 
