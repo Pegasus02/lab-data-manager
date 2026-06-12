@@ -145,20 +145,24 @@ Scripts/
 Create each file below with content tailored to the user's project. Keep all filenames ASCII.
 
 **Language policy:**
-- **README.md files** (project-level and all sub-levels): Write in **bilingual format** (English first, then Chinese). This ensures both English-speaking and Chinese-speaking team members can navigate the project.
+- **README.md**: Create **two separate files** — `README.md` (English) and `README_zh.md` (Chinese). Each file links to the other at the top.
 - **All other files** (AGENTS.md, .agent-context.md, DataManagement_Overview.md, experiment logs, CSV indexes, scripts, Analysis READMEs): Write in **English only**.
 
 **Important:** Before writing each file, check if a corresponding template exists in the repository's `templates/` directory. If it does, read the template first and use it as the structural skeleton — fill in project-specific details on top of it rather than rewriting from scratch.
 
 ---
 
-### README.md (top level) — **BILINGUAL (English + Chinese)**
+### README.md + README_zh.md (top level)
 
-Include (in both English and Chinese):
-- Project title and one-sentence research goal / 项目标题和一句话研究目标
-- Research schemes overview (name + description + resource allocation if known) / 研究方案概览
-- Current status / 当前状态
-- Navigation table: purpose → which file/folder to look at / 导航表：用途 → 对应文件/文件夹
+Create two separate files:
+- `README.md` — English version, with a `[中文文档](README_zh.md)` link at the top
+- `README_zh.md` — Chinese version, with a `[English](README.md)` link at the top
+
+Each includes:
+- Project title and one-sentence research goal
+- Research schemes overview (name + description + resource allocation if known)
+- Current status
+- Navigation table: purpose → which file/folder to look at
 
 ---
 
