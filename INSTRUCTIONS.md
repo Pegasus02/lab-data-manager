@@ -101,24 +101,28 @@ Each experiment batch has exactly one primary home directory. Create an example 
 
 ## Step 3: Create all files
 
-After the user confirms the structure, create every file below. Adapt content to the user's project, preferred language, and domain. Use relative paths inside all generated documentation.
+After the user confirms the structure, create every file below. Adapt content to the user's project and domain. Use relative paths inside all generated documentation.
+
+**Language policy:**
+- **README.md files** (project-level and all sub-levels): Write in **bilingual format** (English first, then Chinese).
+- **All other files** (AGENTS.md, .agent-context.md, DataManagement_Overview.md, experiment logs, CSV indexes, scripts): Write in **English only**.
 
 ### File list
 
 | File | Notes |
 |------|-------|
-| `README.md` | Project title, goal, schemes overview, navigation table |
+| `README.md` | **BILINGUAL** — Project title, goal, schemes overview, navigation table |
 | `AGENTS.md` | Full AI operation rules — see template below |
 | `.agent-context.md` | Condensed AGENTS.md for any AI agent |
 | `DataManagement_Overview.md` | 4 core principles, directory trees, quick-ref table, naming examples |
-| `Experimental_Data/README.md` | Authoritative data structure reference |
-| `Experimental_Data/00_Index/README.md` | Explains the three index CSVs |
+| `Experimental_Data/README.md` | **BILINGUAL** — Authoritative data structure reference |
+| `Experimental_Data/00_Index/README.md` | **BILINGUAL** — Explains the three index CSVs |
 | `Experimental_Data/00_Index/Experiment_Index.csv` | Header row only |
 | `Experimental_Data/00_Index/Sample_Index.csv` | Header row only |
 | `Experimental_Data/00_Index/Device_Index.csv` | Header row only (omit if no device testing) |
-| `Experimental_Data/06_Daily_Experiment_Log/README.md` | Log naming convention and workflow |
+| `Experimental_Data/06_Daily_Experiment_Log/README.md` | **BILINGUAL** — Log naming convention and workflow |
 | `Experimental_Data/06_Daily_Experiment_Log/ExperimentLog_Template.md` | Log template |
-| `Experimental_Data/01_<Scheme1>/README.md` | Batch table + directory structure explanation |
+| `Experimental_Data/01_<Scheme1>/README.md` | **BILINGUAL** — Batch table + directory structure explanation |
 | `Scripts/README.md` | How to use analysis scripts |
 | `Scripts/Data_Analysis/templates/plot_template.py` | Minimal matplotlib template |
 
@@ -126,7 +130,7 @@ After the user confirms the structure, create every file below. Adapt content to
 
 ## AGENTS.md template
 
-Use `templates/AGENTS_md_template.md` as the structural skeleton. The template is bilingual (English + Chinese) — fill in project-specific details in both languages. The template enforces a strict read-before-write protocol for all AI agents.
+Use `templates/AGENTS_md_template.md` as the structural skeleton. Fill in project-specific details in English. The template enforces a strict read-before-write protocol for all AI agents.
 
 Key sections to populate:
 

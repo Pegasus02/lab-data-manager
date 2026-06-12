@@ -142,27 +142,31 @@ Scripts/
 
 ## Phase 3: Generate file contents
 
-Create each file below with content tailored to the user's project. Use the user's preferred language. Keep all filenames ASCII.
+Create each file below with content tailored to the user's project. Keep all filenames ASCII.
+
+**Language policy:**
+- **README.md files** (project-level and all sub-levels): Write in **bilingual format** (English first, then Chinese). This ensures both English-speaking and Chinese-speaking team members can navigate the project.
+- **All other files** (AGENTS.md, .agent-context.md, DataManagement_Overview.md, experiment logs, CSV indexes, scripts, Analysis READMEs): Write in **English only**.
 
 **Important:** Before writing each file, check if a corresponding template exists in the repository's `templates/` directory. If it does, read the template first and use it as the structural skeleton — fill in project-specific details on top of it rather than rewriting from scratch.
 
 ---
 
-### README.md (top level)
+### README.md (top level) — **BILINGUAL (English + Chinese)**
 
-Include:
-- Project title and one-sentence research goal
-- Research schemes overview (name + description + resource allocation if known)
-- Current status (e.g., "Early stage — first experiments underway")
-- Navigation table: purpose → which file/folder to look at
+Include (in both English and Chinese):
+- Project title and one-sentence research goal / 项目标题和一句话研究目标
+- Research schemes overview (name + description + resource allocation if known) / 研究方案概览
+- Current status / 当前状态
+- Navigation table: purpose → which file/folder to look at / 导航表：用途 → 对应文件/文件夹
 
 ---
 
 ### AGENTS.md
 
-This is the single most important file — it tells any AI agent how to operate this project safely and consistently.
+This is the single most important file — it tells any AI agent how to operate this project safely and consistently. Write it in **English only**.
 
-**Use `templates/AGENTS_md_template.md` as the structural skeleton.** The template is written in bilingual format (English + Chinese). Fill in all `<!-- -->` placeholders with project-specific content in both languages. The generated `AGENTS.md` should maintain this bilingual structure so that both English-speaking and Chinese-speaking researchers (and their AI agents) can understand the rules.
+**Use `templates/AGENTS_md_template.md` as the structural skeleton.** Fill in all `<!-- -->` placeholders with project-specific content. The template already contains the correct section structure; your job is to populate it.
 
 Required sections (in order):
 
