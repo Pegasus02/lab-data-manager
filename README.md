@@ -1,4 +1,4 @@
-# lab-data-manager
+# Lab Data Manager
 
 **[中文文档](README_zh.md)**
 
@@ -97,7 +97,7 @@ See `examples/gaafet_project_structure.md` for a real-world example: a 3D-stacke
 ## Repository structure
 
 ```
-lab-data-manager/
+Lab Data Manager/
 ├── INSTRUCTIONS.md              # Full agent instructions (platform-agnostic)
 ├── skills/
 │   └── research-project-setup/

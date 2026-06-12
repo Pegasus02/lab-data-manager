@@ -1,4 +1,4 @@
-# lab-data-manager
+# Lab Data Manager
 
 **[English](README.md)**
 
@@ -97,7 +97,7 @@ YourProject/
 ## 仓库结构
 
 ```
-lab-data-manager/
+Lab Data Manager/
 ├── INSTRUCTIONS.md              # 完整 agent 指令（平台无关）
 ├── skills/
 │   └── research-project-setup/
